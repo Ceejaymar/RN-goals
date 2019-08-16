@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderWidth: 1
   }
-})
+});
 
 export default GoalItem;
