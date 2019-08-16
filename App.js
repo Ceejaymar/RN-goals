@@ -12,6 +12,12 @@ export default function App() {
     // setEnteredGoal(''); //Todo: change input back to empty string after submit
   };
 
+  removeGoalHandler = goalId => {
+    setCourseGoals(currentGoals => {
+      return currentGoals.filter(goal => goal.key !== goalId)
+    })
+  };
+
   return (
     <View style={styles.container}>
       <GoalInput
@@ -19,7 +25,7 @@ export default function App() {
       />
       <FlatList
         data={courseGoals}
-        renderItem={itemData => <GoalItem goal={itemData.item.value} /> }
+        renderItem={itemData => <GoalItem onDelete={removeGoalHandler} goal={itemData.item} /> }
       >
       </FlatList>
     </View>
